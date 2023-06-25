@@ -1,0 +1,136 @@
+.subir-topo-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.subir-topo-button.show {
+  opacity: 1;
+}
+
+.modo-noturno-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modo-noturno-button i {
+  transition: transform 0.3s ease-in-out;
+}
+
+.modo-noturno-button.modo-noturno i {
+  transform: rotate(180deg);
+}
+
+body.modo-noturno {
+  background-color: #111;
+  color: #fff;
+}
+
+.modo-noturno .timeline-item {
+  background-color: #222;
+}
+
+.modo-noturno .timeline-title,
+.modo-noturno .timeline-text {
+  color: black;
+}
+
+.modo-noturno .timeline-index {
+  background-color: #333;
+  color: #fff;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 50px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 2px;
+  background: #17a2b8;
+  margin-left: -1.5px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item .timeline-index {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #17a2b8;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.timeline-item:hover .timeline-index {
+  background-color: #0f7a8c;
+}
+
+.timeline-item .timeline-content {
+  margin-left: 70px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+  background-color: #e9ecef;
+}
+
+.timeline-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-text {
+  text-align: justify;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.timeline-text img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+}

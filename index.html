@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singleton</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <button id="modo-noturno" class="modo-noturno-button">
+    <i class="fas fa-moon"></i>
+  </button>
+  <button id="subir-topo" class="subir-topo-button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <div class="container">
+    <h1 class="text-center">Singleton</h1>
+
+    <ul class="timeline" id="timeline">
+      <li class="timeline-item">
+        <div class="timeline-index">1</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Introdução</h2>
+          <p class="timeline-text">O padrão Singleton é um padrão de projeto de software que garante que apenas uma
+            instância de uma determinada classe seja criada durante a execução de um programa. Isso pode ser útil em
+            situações em que você precisa de uma única instância de uma classe para ser compartilhada por várias partes
+            do programa, como por exemplo em uma classe responsável por gerenciar uma conexão com um banco de dados.
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">2</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Como funciona</h2>
+          <p class="timeline-text">Para implementar o padrão Singleton, você deve criar uma classe que tenha um
+            construtor privado e um método estático que retorne a única instância da classe. O método estático pode
+            verificar se a instância já foi criada e, se sim, retorná-la. Caso contrário, ele cria uma nova instância da
+            classe e a retorna. Dessa forma, todas as outras partes do programa que precisarem da instância da classe
+            usarão a mesma instância.
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">3</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Vantagens</h2>
+          <p class="timeline-text">O padrão Singleton pode ser útil em diversas situações, como por exemplo:</p>
+          <p class="timeline-text">- Evitar problemas de concorrência em programas multi-threaded;</p>
+          <p class="timeline-text">- Evitar a criação desnecessária de objetos, o que pode levar a problemas de
+            desempenho;</p>
+          <p class="timeline-text">- Gerenciar recursos compartilhados de forma mais eficiente.</p>
+          <p class="timeline-text">Além disso, o padrão Singleton pode tornar o código mais fácil de entender e manter,
+            já que todas as partes do programa que usam a instância da classe estão usando a mesma instância.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">4</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Desvantagens</h2>
+          <p class="timeline-text">Embora o padrão Singleton possa ser útil em muitas situações, ele também tem algumas
+            desvantagens, como por exemplo:</p>
+          <p class="timeline-text">Pode tornar o código mais complexo, especialmente se você precisar garantir que a
+            instância da classe seja thread-safe;
+          </p>
+          <p class="timeline-text">Pode ser difícil de testar, já que a instância da classe é compartilhada por várias
+            partes do programa;
+          </p>
+          <p class="timeline-text">Pode levar a problemas de acoplamento entre as diferentes partes do programa que usam
+            a instância da classe.
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">5</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Boas praticas
+          </h2>
+          <p class="timeline-text">Ao implementar o padrão Singleton, é importante seguir algumas boas práticas para
+            garantir que ele funcione corretamente e não cause problemas. Algumas dessas boas práticas incluem:
+          </p>
+          <p class="timeline-text">Garantir que a instância da classe seja thread-safe, se necessário;
+
+          </p>
+          <p class="timeline-text">Evitar a criação desnecessária de objetos, mas também não criar a instância da classe
+            muito cedo;
+          </p>
+          <p class="timeline-text">Evitar o uso excessivo do padrão Singleton, já que ele pode levar a problemas de
+            acoplamento e dificultar o teste de código;
+          </p>
+          <p class="timeline-text">Usar injeção de dependência em vez do padrão Singleton, se possível, já que isso pode
+            tornar o código mais modular e mais fácil de testar.
+
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">6</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Exemplo de implementação</h2>
+          <p class="timeline-text">Uma classe que gerencia a conexão com o banco de dados é um bom exemplo de quando o
+            padrão Singleton pode ser útil. Ao criar apenas uma instância da classe, você pode garantir que todas as
+            partes do programa que precisam acessar o banco de dados estejam usando a mesma conexão, o que pode melhorar
+            o desempenho e evitar problemas.</p>
+          <p class="timeline-text"><img src="example1.png"></p>
+          <p class="timeline-text">Neste exemplo, a classe DatabaseConnection é implementada como um Singleton, com um
+            construtor privado e um método estático getInstance() que retorna a única instância da classe. O método
+            getInstance() verifica se a instância já foi criada e, se não, cria uma nova instância da classe. O método
+            getConnection() retorna a conexão com o banco de dados.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-index">7</div>
+        <div class="timeline-content">
+          <h2 class="timeline-title">Exemplo em UML</h2>
+          <p class="timeline-text">Aqui está um exemplo de diagrama de classes UML que representa a implementação do
+            padrão Singleton em uma classe chamada Configuracao:</p>
+          <p class="timeline-text"><img src="example2.png"></p>
+          <p class="timeline-text">Neste diagrama, a classe Configuracao tem uma única instância representada pelo
+            atributo instancia do tipo Configuracao. O construtor da classe é privado, impedindo a criação de instâncias
+            fora da classe. O método estático getInstance() retorna a única instância da classe, criando-a se ainda não
+            existir. Os métodos getUrl(), setUrl(), getUsuario(), setUsuario(), getSenha() e setSenha() são os métodos
+            públicos da classe que podem ser usados para acessar e modificar as configurações armazenadas na única
+            instância da classe.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
