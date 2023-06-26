@@ -11,6 +11,10 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+h1 {
+  margin-top: 1em;
+}
+
 .subir-topo-button.show {
   opacity: 1;
 }
@@ -20,10 +24,17 @@
   top: 20px;
   right: 20px;
   background-color: transparent;
-  border: none;
+  border: none !important;
+  outline: none !important;
   color: black;
   font-size: 24px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.modo-noturno-button.dark {
+  color: white;
+  transition: 0.2s;
 }
 
 .modo-noturno-button i {
@@ -133,4 +144,64 @@ body.modo-noturno {
   max-width: 100%;
   height: auto;
   margin: 10px auto;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transition: 1s all ease;
+  position: relative;
+  transform: translateY(150px);
+}
+
+.reveal.revealed {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.revealed.fade-bottom {
+  animation: fade-bottom 0.5s ease-in;
+}
+
+.revealed.fade-left {
+  animation: fade-left 0.5s ease-in;
+}
+
+.revealed.fade-right {
+  animation: fade-right 0.5s ease-in;
 }
