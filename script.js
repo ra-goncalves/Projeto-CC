@@ -39,7 +39,7 @@ function subirAoTopo() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
-  });x
+  }); x
 }
 
 subirTopoBtn.addEventListener('click', subirAoTopo);
@@ -52,8 +52,31 @@ function reveal() {
 
     if (elementTop < window.innerHeight * 1.2) {
       reveals[p].classList.add('revealed');
-    } 
+    }
   }
 }
 
 window.onscroll = reveal;
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+
+  player = new YT.Player('player', {
+    videoId: 'IbUEu6XzVWs', 
+    playerVars: {
+      autoplay: 0, 
+      controls: 0, 
+      modestbranding: 1, 
+      rel: 0 
+    },
+    events: {
+      'onStateChange': onPlayerStateChange 
+    }
+  });
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.ENDED) {
+  }
+}
